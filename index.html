@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Contacts</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <style>
+    /* Style the table */
+    table {
+      width: 50%;
+      margin: 20px auto;
+      border-collapse: collapse;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    th, td {
+      padding: 12px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+
+    th {
+      background-color: #FF69B4;
+    }
+    tr{
+      background-color: #F4C2C2;
+    }
+
+    .even {
+      background-color: #FFB6C1;
+    }
+
+    p {
+      text-align: center;
+      font-size: 1.2em;
+      color: #333;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Create a table with two columns and 7 rows (including the headers) -->
+  <table>
+    <tr class = "head">
+      <th>Slot #</th>
+      <th>Number</th>
+    </tr>
+    <tr class = "even">
+      <td>0</td>
+      <td>number-0</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>number-1</td>
+    </tr>
+    <tr class = "even">
+      <td>2</td>
+      <td>number-2</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>number-3</td>
+    </tr>
+    <tr class = "even">
+      <td>4</td>
+      <td>number-4</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>number-5</td>
+    </tr>
+  </table>
+
+  <!-- Create a paragraph to display answers -->
+  <p id="cname"></p>
+
+  <script>
+    // Create an array containing all the names
+    const cnames = ["Jack", "Jill", "John", "Jane", "Jim", "Jessica"];
+
+    // Create a variable containing user input to the prompt (Would you like to search for a name?)
+    let go = prompt("Would you like to search for a name?").toLowerCase();
+
+    // While the answer to the prompt is equal to yes, loop the following
+    while (go === "yes") {
+      // Create a variable for the number that they enter in (Please choose the slot number for the name which you want to see)
+      let chooseNumber = prompt('Please choose the slot number for the name which you want to see');
+
+      // Check if the chosen number is valid (between 0 and 5)
+      if (chooseNumber >= 0 && chooseNumber <= 5) {
+        document.getElementById("cname").innerHTML = `You selected ${cnames[chooseNumber]}`;
+      } else {
+        document.getElementById("cname").innerHTML = "Please choose a number between 1 and 6";
+      }
+
+      // Ask if they want to search again
+      go = prompt("Would you like to search for another name?").toLowerCase();
+    }
+    alert('Thank you for using this program')
+  </script>
+</body>
+
+</html>
