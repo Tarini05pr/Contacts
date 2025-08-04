@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Tarini Pabbareddy">
+  <title>Contacts</title>
+  <meta name="description" content="Contacts">
+  <meta name="keywords" content="Contacts, array selection">
+  <link rel="stylesheet" href="css/style.css" type="text/css">
+</head>
+<body>
+
+   <h1>Contacts Directory</h1>
+  <p>Hello! Please take a moment to explore the list below:</p>
+
+  <table class="slot-table" id="nameTable">
+    <thead>
+      <tr>
+        <th>Slot #</th>
+        <th>Number</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <div class="message" id="messageArea"></div>
+
+  <script>
+    const names = ["Arnold", "Sly", "Dwayne", "Vin", "JCVD", "Steven"];
+    const tableBody = document.querySelector("#nameTable tbody");
+    const messageArea = document.getElementById("messageArea");
+
+    // Create table rows
+    for (let i = 0; i < names.length; i++) {
+      let row = document.createElement("tr");
+      row.innerHTML = `<td>${i}</td><td>${names[i]}</td>`;
+      tableBody.appendChild(row);
+    }
+
+    // Charming invitation
+    alert("Would you like to explore the directory? Let’s begin!");
+
+    let keepSearching = true;
+
+    while (keepSearching) {
+      let slotInput = prompt("Please enter the Slot Number of the name you wish to see:");
+      let selectedName = names[slotInput];
+
+      if (selectedName !== undefined) {
+        messageArea.innerHTML = `You selected <span class="highlight">${selectedName}</span>.`;
+      } else {
+        messageArea.innerHTML = `Sorry, that name is not found. Please try again.`;
+      }
+
+      let again = prompt("Would you like to search for another name?");
+      if (again !== "yes") {
+        keepSearching = false;
+        messageArea.innerHTML += `<br><br>Thank you! Refresh the page to search again.`;
+      }
+    }
+  </script>
+</body>
+</html>
