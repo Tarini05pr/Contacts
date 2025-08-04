@@ -1,0 +1,32 @@
+body {
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      background-color: #d330ad;
+      padding: 2rem;
+      text-align: center;
+    }
+    h1 {
+      color: #631146;
+    }
+    .slot-table {
+      margin: 1rem auto;
+      border-collapse: collapse;
+      width: 50%;
+      background-color: #dc7bb7;
+      box-shadow: 0 0 10px rgba(251, 249, 249, 0.1);
+    }
+    .slot-table th, .slot-table td {
+      border: 1px solid #500446;
+      padding: 10px;
+    }
+    .slot-table th {
+      background-color: #f073dd;
+    }
+    .message {
+      margin-top: 2rem;
+      font-size: 1.2rem;
+      color: #8c2b72;
+    }
+    .highlight {
+      font-weight: bold;
+      color: #f0afeb;
+    }
